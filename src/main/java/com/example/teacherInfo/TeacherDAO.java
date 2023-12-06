@@ -1,4 +1,4 @@
-package com.example1;
+package com.example.teacherInfo;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;

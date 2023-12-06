@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="TeacherInfo">
+    <insert id="insertInfo">
+        insert into TeacherInfo (photo, name, subject, term, phone, mail)
+        values
+        (#{photo} , #{name} , #{subject} , #{term}, #{phone} , #{mail})
+    </insert>
+    <update id="updateInfo">
+        update TeacherInfo
+        set photo=#{photo}, name=#{name}, subject=#{subject}, term=#{term}, phone=#{phone}, mail=#{mail}
+        where seq=#{seq}
+    </update>
+    <delete id="deleteInfo">
+        delete from TeacherInfo where seq=#{seq}
+    </delete>
+    <select id="getInfo" resultType="teacherInfo">
+        select * from TeacherInfo where seq=#{seq}
+    </select>
+    <select id="getInfoList" resultType="teacherInfo">
+        select * from TeacherInfo  order by seq desc
+    </select>
+</mapper>

@@ -1,4 +1,4 @@
-package com.example1;
+package com.example.teacherInfo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,7 +21,7 @@ public class TeacherInfoController {
 
     @RequestMapping("/add")
     public String addTeacher() {
-        return "addteacherform";
+        return "addpostform";
     }
 
     @RequestMapping("/addok")
@@ -38,7 +38,7 @@ public class TeacherInfoController {
     public String editTeacher(@PathVariable("seq") int seq, Model model) {
         TeacherVO teacherVO = teacherInfoService.getInfo(seq);
         model.addAttribute("teacher", teacherVO);
-        return "editteacherform";
+        return "editform";
     }
 
     @RequestMapping(value = "/editok", method = RequestMethod.POST)
@@ -64,6 +64,6 @@ public class TeacherInfoController {
     public String viewTeacher(@PathVariable("seq") int seq, Model model) {
         TeacherVO teacherVO = teacherInfoService.getInfo(seq);
         model.addAttribute("teacherVO", teacherVO);
-        return "viewteacher";
+        return "view";
     }
 }

@@ -1,4 +1,4 @@
-package com.example1;
+package com.example.teacherInfo;
 
 import java.util.List;
 
